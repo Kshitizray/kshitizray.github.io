@@ -442,7 +442,26 @@
   }
   .cert-item .name{ font-size: 0.98rem; }
   .cert-item .idx{ font-family: var(--mono); color: var(--text-faint); font-size: 0.8rem; min-width: 34px; }
-  .cert-item .name-wrap{ display:flex; gap: 14px; }
+  .cert-item .name-wrap{ display:flex; gap: 14px; align-items: baseline; }
+  .cert-item{ display:flex; justify-content: space-between; align-items:center; gap: 20px; flex-wrap: wrap; }
+  .cert-view-btn{
+    font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--accent); background: transparent; border: 1px solid var(--accent-dim);
+    padding: 7px 14px; cursor: pointer; white-space: nowrap; flex-shrink: 0;
+    transition: all .2s ease;
+  }
+  .cert-view-btn:hover{ background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  /* ===== certificate preview modal ===== */
+  #certModal{ position:fixed; inset:0; z-index:700; display:none; align-items:center; justify-content:center; padding: 24px; background: rgba(8,11,14,0.82); backdrop-filter: blur(6px); }
+  #certModal.open{ display:flex; }
+  .cert-modal-inner{ max-width: 620px; width:100%; max-height: 86vh; overflow:auto; background: var(--bg-alt); border: 1px solid var(--line); position: relative; }
+  .cert-modal-img-wrap{ background:#fff; }
+  .cert-modal-img-wrap img{ width:100%; display:block; }
+  .cert-modal-close{ position:absolute; top:14px; right:14px; width:36px; height:36px; border-radius:50%; background: rgba(0,0,0,0.55); color:#fff; border:none; cursor:pointer; font-size:1rem; z-index:2; }
+  .cert-modal-body{ padding: 22px 24px; }
+  .cert-modal-body h3{ font-family: var(--display); font-size: 1.15rem; margin-bottom: 10px; line-height: 1.3; }
+  .cert-modal-body .meta{ font-family: var(--mono); font-size: 0.76rem; color: var(--text-soft); margin-bottom: 4px; }
 
   /* ===== CONTACT ===== */
   .contact-grid{
@@ -567,6 +586,7 @@
           <div class="row"><b>DEGREE</b><span class="val">B.Tech</span></div>
           <div class="row"><b>PROGRAM</b><span class="val">Mechatronics</span></div>
           <div class="row"><b>UNIVERSITY</b><span class="val">KIIT</span></div>
+          <div class="row"><b>LOCATION</b><span class="val">Bhubaneswar</span></div>
           <div class="row"><b>FOCUS</b><span class="val">Robotics/CAD</span></div>
           <div class="row"><b>STATUS</b><span class="val">Available</span></div>
         </div>
@@ -582,14 +602,14 @@
     </div>
     <div class="about-grid reveal">
       <div>
-        <p>I am a B.Tech Mechatronics Engineering student at KIIT University with a strong interest in mechanical design, industrial automation, robotics, and embedded systems. I enjoy designing practical engineering solutions by combining mechanical engineering, electronics, and programming.</p>
-        <p>I have experience working with CAD software such as SolidWorks and Autodesk Fusion 360, as well as embedded platforms including Arduino, ESP32, and Raspberry Pi. During my internship at Tata Steel, I worked on an industrial automation project focused on improving safety and efficiency in steel manufacturing.</p>
+        <p>I am a B.Tech Mechatronics Engineering student at KIIT University (previously Diploma in Mechatronics Engineering at NTTF RD Tata Technical Education Centre, CGPA 7.82) with a strong interest in mechanical design, product development, and smart manufacturing systems. I enjoy designing practical engineering solutions by combining mechanical engineering, electronics, and programming.</p>
+        <p>I have experience working with CAD software such as SolidWorks, Siemens NX, Fusion 360, and MasterCAM, as well as embedded platforms including Arduino, ESP32, and Raspberry Pi. As a Junior Project Engineer Intern at COTMAV Robotics &amp; Automation, I worked on the implementation of FANUC industrial robots — supporting installation, mechanical setup, testing, and commissioning for clients including Endurance, Studds Helmets, Highco Engineering Works, Arvind Mill, and RKFL, including robotic welding and spray painting automation systems.</p>
         <p>My goal is to build innovative automation systems and pursue a career in mechanical design and industrial automation while continuously expanding my technical skills through hands-on projects.</p>
       </div>
       <div class="stat-block">
-        <div class="stat-card"><div class="n">2+</div><div class="l">Featured Projects</div></div>
-        <div class="stat-card"><div class="n">7</div><div class="l">Certifications</div></div>
-        <div class="stat-card"><div class="n">Tata Steel</div><div class="l">Industrial Internship</div></div>
+        <div class="stat-card"><div class="n">5+</div><div class="l">Featured Projects</div></div>
+        <div class="stat-card"><div class="n">12</div><div class="l">Certifications &amp; Awards</div></div>
+        <div class="stat-card"><div class="n">COTMAV</div><div class="l">Robotics &amp; Automation Intern</div></div>
       </div>
     </div>
   </section>
@@ -638,6 +658,60 @@
         <span class="tag">Mobile Interface</span>
       </div>
     </div>
+
+    <div class="project-card reveal bracket">
+      <span class="bl"></span><span class="br"></span>
+      <div class="project-head">
+        <div>
+          <div class="project-id">PRJ-03 / PERSONAL PROJECT</div>
+          <h3>Delta 3D Printer Design</h3>
+        </div>
+        <div class="status-tag">Manufacturing</div>
+      </div>
+      <p class="desc">Designed and assembled a delta-configuration 3D printer from the ground up, tuning slicing parameters and print settings in Ultimaker Cura to optimize print quality and reliability.</p>
+      <div class="tag-row">
+        <span class="tag">Delta Kinematics</span>
+        <span class="tag">Mechanical Assembly</span>
+        <span class="tag">Additive Manufacturing</span>
+        <span class="tag">Ultimaker Cura</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal bracket">
+      <span class="bl"></span><span class="br"></span>
+      <div class="project-head">
+        <div>
+          <div class="project-id">PRJ-04 / PERSONAL PROJECT</div>
+          <h3>4-DOF SCARA Robotic Arm</h3>
+        </div>
+        <div class="status-tag">Robotics</div>
+      </div>
+      <p class="desc">Designed a SCARA-configuration robotic arm with four degrees of freedom, engineering the mechanical joints and actuator layout for precise, repeatable motion.</p>
+      <div class="tag-row">
+        <span class="tag">Robotic Arm Design</span>
+        <span class="tag">CAD Modeling</span>
+        <span class="tag">Actuators</span>
+        <span class="tag">Mechanical Joints</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal bracket">
+      <span class="bl"></span><span class="br"></span>
+      <div class="project-head">
+        <div>
+          <div class="project-id">PRJ-05 / PERSONAL PROJECT</div>
+          <h3>IoT Weather Monitoring System</h3>
+        </div>
+        <div class="status-tag">IoT</div>
+      </div>
+      <p class="desc">Built a sensor-based environmental monitoring system using microcontrollers to track and report live weather and environmental data.</p>
+      <div class="tag-row">
+        <span class="tag">Sensors</span>
+        <span class="tag">Microcontrollers</span>
+        <span class="tag">IoT</span>
+        <span class="tag">Environmental Monitoring</span>
+      </div>
+    </div>
   </section>
 
   <!-- SKILLS -->
@@ -651,8 +725,9 @@
         <span class="cat-label">Mechanical Design</span>
         <ul>
           <li>SolidWorks</li>
+          <li>Siemens NX</li>
           <li>Autodesk Fusion 360</li>
-          <li>Engineering Drawing</li>
+          <li>MasterCAM</li>
           <li>CAD Modeling</li>
           <li>Additive Manufacturing (3D Printing)</li>
         </ul>
@@ -665,15 +740,17 @@
           <li>Raspberry Pi</li>
           <li>Embedded C</li>
           <li>IoT</li>
+          <li>Sensors — Temperature, Ultrasonic, IR, Reed Switch</li>
         </ul>
       </div>
       <div class="skill-cat">
         <span class="cat-label">Robotics &amp; Automation</span>
         <ul>
-          <li>PLC (Learning)</li>
+          <li>FANUC ARC Mate &amp; LR Mate</li>
+          <li>Elite Cobots</li>
           <li>Industrial Automation</li>
-          <li>Robotics Fundamentals</li>
-          <li>Sensors &amp; Actuators</li>
+          <li>Robotic Welding &amp; Spray Automation</li>
+          <li>PLC (Learning)</li>
           <li>Control Systems</li>
         </ul>
       </div>
@@ -682,6 +759,8 @@
       <span class="tag">Arduino IDE</span>
       <span class="tag">Ultimaker Cura</span>
       <span class="tag">Tinkercad</span>
+      <span class="tag">MIG Welding</span>
+      <span class="tag">Mechanical Assembly</span>
       <span class="tag">Microsoft Office</span>
     </div>
   </section>
@@ -694,28 +773,68 @@
     </div>
     <div class="cert-list reveal">
       <div class="cert-item">
-        <div class="name-wrap"><span class="idx">01</span><span class="name">NOCN Level 5 International Diploma in Mechanical Engineering (Mechatronics &amp; Smart Manufacturing)</span></div>
+        <div class="name-wrap"><span class="idx">01</span><span class="name">NOCN Level 5 Diploma in Mechanical Engineering (Mechatronics &amp; Smart Manufacturing) — Merit</span></div>
+        <button class="cert-view-btn" data-cert="0">View Certificate</button>
       </div>
       <div class="cert-item">
-        <div class="name-wrap"><span class="idx">02</span><span class="name">NSDC Technician Instrumentation (Level 4)</span></div>
+        <div class="name-wrap"><span class="idx">02</span><span class="name">NSDC — Technician Instrumentation (CSC/Q0802), NSQF Level 4</span></div>
+        <button class="cert-view-btn" data-cert="1">View Certificate</button>
       </div>
       <div class="cert-item">
-        <div class="name-wrap"><span class="idx">03</span><span class="name">NSDC Wireman Control Panel Electronics (Level 3)</span></div>
+        <div class="name-wrap"><span class="idx">03</span><span class="name">NSDC — Wireman Control Panel Electronics (ELE/Q7302), NSQF Level 3</span></div>
+        <button class="cert-view-btn" data-cert="2">View Certificate</button>
       </div>
       <div class="cert-item">
-        <div class="name-wrap"><span class="idx">04</span><span class="name">Autodesk Design Competition — Participation</span></div>
+        <div class="name-wrap"><span class="idx">04</span><span class="name">Autodesk Skill Surge Inter-State Design Challenge 2025 — Finalist</span></div>
+        <button class="cert-view-btn" data-cert="3">View Certificate</button>
       </div>
       <div class="cert-item">
-        <div class="name-wrap"><span class="idx">05</span><span class="name">Twintech Interstate Design Challenge 2025</span></div>
+        <div class="name-wrap"><span class="idx">05</span><span class="name">Autodesk Skill Surge Inter-State Design Challenge 2025 — Prelims (Fusion 360 Cloud)</span></div>
+        <button class="cert-view-btn" data-cert="4">View Certificate</button>
       </div>
       <div class="cert-item">
-        <div class="name-wrap"><span class="idx">06</span><span class="name">Smart Home Automation Project Certificate</span></div>
+        <div class="name-wrap"><span class="idx">06</span><span class="name">Certificate of Achievement — Home Automation (Campus as Lab), NTTF</span></div>
+        <button class="cert-view-btn" data-cert="5">View Certificate</button>
       </div>
       <div class="cert-item">
-        <div class="name-wrap"><span class="idx">07</span><span class="name">Tata Steel Technical Institute — Project Display Certificate</span></div>
+        <div class="name-wrap"><span class="idx">07</span><span class="name">Student AI Masterclass — Google for Education AI Implementation Program</span></div>
+        <button class="cert-view-btn" data-cert="6">View Certificate</button>
+      </div>
+      <div class="cert-item">
+        <div class="name-wrap"><span class="idx">08</span><span class="name">Tata Steel Digi-Shala — Measuring Instruments</span></div>
+        <button class="cert-view-btn" data-cert="7">View Certificate</button>
+      </div>
+      <div class="cert-item">
+        <div class="name-wrap"><span class="idx">09</span><span class="name">Tata Steel Digi-Shala — Engineering Drawing</span></div>
+        <button class="cert-view-btn" data-cert="8">View Certificate</button>
+      </div>
+      <div class="cert-item">
+        <div class="name-wrap"><span class="idx">10</span><span class="name">Tata Steel Digi-Shala — Limit, Fit &amp; Tolerance</span></div>
+        <button class="cert-view-btn" data-cert="9">View Certificate</button>
+      </div>
+      <div class="cert-item">
+        <div class="name-wrap"><span class="idx">11</span><span class="name">Tata Steel Digi-Shala — Bearings</span></div>
+        <button class="cert-view-btn" data-cert="10">View Certificate</button>
+      </div>
+      <div class="cert-item">
+        <div class="name-wrap"><span class="idx">12</span><span class="name">1st Rank — Youth Skill Competition</span></div>
       </div>
     </div>
   </section>
+
+  <div id="certModal">
+    <div class="cert-modal-inner bracket">
+      <span class="bl"></span><span class="br"></span>
+      <button class="cert-modal-close" id="certModalClose">✕</button>
+      <div class="cert-modal-img-wrap"><img id="certModalImg" src="" alt=""></div>
+      <div class="cert-modal-body">
+        <h3 id="certModalTitle"></h3>
+        <div class="meta" id="certModalIssuer"></div>
+        <div class="meta" id="certModalDate"></div>
+        <a id="certModalDownload" class="btn primary" style="margin-top:14px;" download>Download PDF ⬇</a>
+      </div>
+    </div>
+  </div>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -725,16 +844,21 @@
     </div>
     <div class="contact-grid reveal">
       <div class="contact-links">
-        <a class="contact-link" href="mailto:youremail@example.com">
-          <span>EMAIL — youremail@example.com</span><span class="arrow">↗</span>
+        <a class="contact-link" href="mailto:kshitizray77@gmail.com">
+          <span>EMAIL — kshitizray77@gmail.com</span><span class="arrow">↗</span>
         </a>
-        <a class="contact-link" href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">
-          <span>LINKEDIN — /in/your-profile</span><span class="arrow">↗</span>
+        <a class="contact-link" href="tel:+917762865002">
+          <span>PHONE — +91 77628 65002</span><span class="arrow">↗</span>
         </a>
-        <a class="contact-link" href="https://github.com/your-username" target="_blank" rel="noopener">
-          <span>GITHUB — /your-username</span><span class="arrow">↗</span>
+        <a class="contact-link" href="https://www.linkedin.com/in/kshitizray" target="_blank" rel="noopener">
+          <span>LINKEDIN — /in/kshitizray</span><span class="arrow">↗</span>
         </a>
-        <p class="form-note">⚠ Placeholder links above — replace with your real email, LinkedIn and GitHub URLs (see note at bottom of file / chat).</p>
+        <a class="contact-link" href="https://github.com/kshitizray" target="_blank" rel="noopener">
+          <span>GITHUB — /kshitizray</span><span class="arrow">↗</span>
+        </a>
+        <div class="contact-link" style="cursor:default;">
+          <span>LOCATION — Bhubaneswar, India</span><span class="arrow">📍</span>
+        </div>
       </div>
       <form id="contactForm">
         <div>
@@ -764,6 +888,37 @@
 
 <script>
   gsap.registerPlugin(ScrollTrigger);
+
+  // ===== certificate preview modal =====
+  const CERTS = [
+    { name:"NOCN Level 5 Diploma in Mechanical Engineering (Mechatronics & Smart Manufacturing) — Merit", issuer:"NOCN Group / Ofqual Regulated", date:"Awarded 12/09/2024 · Cert No. 48426167", img:"assets/certs/thumb-nocn.jpg", pdf:"assets/certs/nocn-level5-diploma.pdf" },
+    { name:"NSDC — Technician Instrumentation (CSC/Q0802), NSQF Level 4", issuer:"NTTF / Skill India / Ministry of Skill Development", date:"National Skills Qualification", img:"assets/certs/thumb-nsdc-l4.jpg", pdf:"assets/certs/nsdc-technician-instrumentation-l4.pdf" },
+    { name:"NSDC — Wireman Control Panel Electronics (ELE/Q7302), NSQF Level 3", issuer:"NTTF / Skill India / Electronics Sector Skills Council", date:"National Skills Qualification", img:"assets/certs/thumb-nsdc-l3.jpg", pdf:"assets/certs/nsdc-wireman-control-panel-l3.pdf" },
+    { name:"Autodesk Skill Surge Inter-State Design Challenge 2025 — Finalist", issuer:"Twintech Engineering & Design Technology / Autodesk / KIIT", date:"14 September 2025", img:"assets/certs/thumb-twintech.jpg", pdf:"assets/certs/autodesk-twintech-finalist.pdf" },
+    { name:"Autodesk Skill Surge Inter-State Design Challenge 2025 — Prelims (Fusion 360 Cloud)", issuer:"Autodesk Authorized Academic Partner", date:"Cert No. AP701417098431955668826", img:"assets/certs/thumb-fusion360.jpg", pdf:"assets/certs/autodesk-fusion360-prelims.pdf" },
+    { name:"Certificate of Achievement — Home Automation (Campus as Lab)", issuer:"NTTF @ R.D. Tata Technical Education Centre", date:"Project theme: Home Automation", img:"assets/certs/thumb-nttf-homeauto.jpg", pdf:"assets/certs/nttf-home-automation-achievement.pdf" },
+    { name:"Student AI Masterclass — Certificate of Participation", issuer:"Google for Education AI Implementation Program / upEducators", date:"25 April 2026", img:"assets/certs/thumb-googleai.jpg", pdf:"assets/certs/google-ai-masterclass.pdf" },
+    { name:"Digi-Shala E-Learning — Measuring Instruments", issuer:"Tata Steel Technical Institute", date:"18 May 2026", img:"assets/certs/thumb-tata-measuring.jpg", pdf:"assets/certs/tatasteel-measuring-instrument.pdf" },
+    { name:"Digi-Shala E-Learning — Engineering Drawing", issuer:"Tata Steel Technical Institute", date:"18 May 2026", img:"assets/certs/thumb-tata-drawing.jpg", pdf:"assets/certs/tatasteel-engineering-drawing.pdf" },
+    { name:"Digi-Shala E-Learning — Limit, Fit & Tolerance", issuer:"Tata Steel Technical Institute", date:"18 May 2026", img:"assets/certs/thumb-tata-tolerance.jpg", pdf:"assets/certs/tatasteel-limit-fit-tolerance.pdf" },
+    { name:"Digi-Shala E-Learning — Bearings", issuer:"Tata Steel Technical Institute", date:"18 May 2026", img:"assets/certs/thumb-tata-bearings.jpg", pdf:"assets/certs/tatasteel-bearings.pdf" }
+  ];
+  const certModal = document.getElementById('certModal');
+  function openCertModal(c){
+    document.getElementById('certModalImg').src = c.img;
+    document.getElementById('certModalImg').alt = c.name;
+    document.getElementById('certModalTitle').textContent = c.name;
+    document.getElementById('certModalIssuer').textContent = c.issuer;
+    document.getElementById('certModalDate').textContent = c.date;
+    document.getElementById('certModalDownload').href = c.pdf;
+    certModal.classList.add('open');
+  }
+  document.querySelectorAll('.cert-view-btn').forEach(btn => {
+    btn.addEventListener('click', () => openCertModal(CERTS[+btn.dataset.cert]));
+  });
+  document.getElementById('certModalClose').addEventListener('click', () => certModal.classList.remove('open'));
+  certModal.addEventListener('click', (e) => { if(e.target === certModal) certModal.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') certModal.classList.remove('open'); });
 
   // mobile nav toggle
   const navToggle = document.getElementById('navToggle');
@@ -876,7 +1031,7 @@
     const message = document.getElementById('message').value;
     const subject = encodeURIComponent('Portfolio contact from ' + name);
     const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
-    window.location.href = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:kshitizray77@gmail.com?subject=${subject}&body=${body}`;
   });
 </script>
 
