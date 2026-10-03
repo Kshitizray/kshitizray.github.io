@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kshitizray.github.io/sitemap.xml
